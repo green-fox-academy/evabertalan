@@ -31,9 +31,9 @@ section {
 .one {
   padding-top: 110px;
   padding-bottom: 150px;
-  background-image: url(../img/korkep_4.jpg);
+  background-image: url(../img/hatterfej.jpg);
   background-position: center;
-  background-size: 400px;
+  background-size: 550px;
   background-repeat: no-repeat;
 }
 
@@ -63,7 +63,6 @@ section {
   padding-bottom: 15px;
 }
 
-
 .four {
   padding-left: 400px;
   background-image: url(../img/deapp.jpg);
@@ -86,7 +85,6 @@ section {
   color: #444059;
 }
 
-
 .five ul {
   width: 280px;
   margin-left: auto;
@@ -96,11 +94,9 @@ section {
   line-height: 2;
 }
 
-
 .four ul {
   line-height: 1.5;
 }
-
 
 h1 {
   color: #D7E0E0;
