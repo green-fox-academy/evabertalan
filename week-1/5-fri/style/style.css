@@ -1,0 +1,148 @@
+body {
+  margin:0px;
+ }
+
+header {
+ background-image: url(../img/203-original.jpg);
+ background-position: center center;
+ background-size: cover;
+ padding-top: 200px;
+ padding-right: 20px;
+ padding-bottom:50px;
+ padding-left: 20px;
+}
+
+article {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+  padding: 10px;
+}
+
+strong {
+   font-weight: 700;
+}
+
+section {
+  padding-bottom: 25px;
+  padding-top: 26px;
+}
+
+.one {
+  padding-top: 110px;
+  padding-bottom: 150px;
+  background-image: url(../img/korkep_4.jpg);
+  background-position: center;
+  background-size: 400px;
+  background-repeat: no-repeat;
+}
+
+.one ul {
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  font-style: Josefin+Sans;
+  font-size: 19px;
+  color: #42bcc3;
+  line-height: 1.5;
+}
+
+.two {
+  line-height: 1;
+}
+.two h4 {
+  padding-left: 30px;
+}
+.two p {
+  padding-left: 30px;
+}
+
+.three li {
+  line-height: 1.0;
+  padding-bottom: 15px;
+}
+
+
+.four {
+  padding-left: 400px;
+  background-image: url(../img/deapp.jpg);
+  background-size: 360px;
+  background-repeat: no-repeat;
+  background-position: left;
+  font-family: Cardo;
+  color: #444059;
+}
+
+.five {
+  padding-bottom: 70px;
+  padding-right: 400px;
+  background-image: url(../img/deapp.jpg);
+  background-size: 360px;
+  background-repeat: no-repeat;
+  background-position: right;
+  font-family: Cardo;
+  font-size: 20px;
+  color: #444059;
+}
+
+
+.five ul {
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  list-style:none;
+  line-height: 2;
+}
+
+
+.four ul {
+  line-height: 1.5;
+}
+
+
+h1 {
+  color: #D7E0E0;
+  font-size: 42px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+h2 {
+  color: #6E7373;
+  font-size: 38px;
+  font-weight: 300;
+  margin bottom: 40px;
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: Cardo;
+  text-align: center;
+}
+
+h3 {
+  font-family:Cardo;
+  font-size: 15px;
+  color: #42bcc3;
+}
+
+h4 {
+  font-family: Cardo;
+}
+
+p {
+  color: #444;
+  font-family: Josefin+Sans;
+  line-height: 1.5;
+}
+footer {
+background-image: url(../img/203-original.jpg);
+background-position: center center;
+background-size: cover;
+padding-right: 20px;
+padding-bottom:20px;
+padding-left: 20px;
+}
