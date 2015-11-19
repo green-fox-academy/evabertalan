@@ -11,41 +11,34 @@
       <header class="main-header">
         <nav class="user-menu">
           <ul>
-            <li>Create account</li>
-            <li>Not logged in</li>
-            <li>Talk</li>
-            <li>Contributions</li>
-            <li>Log in</li>
+            <li><a id="create-account" href="#">Create account</a></li>
+            <li><a id="log-in" href="#">Log in</a></li>
           </ul>
         </nav>
 
         <nav class="talk-menu">
           <ul>
-            <li>Aticle</li>
-            <li>Talk</li>
+            <li>Special page</li>
           </ul>
         </nav>
 
-        <nav class="edit-menu">
-          <ul>
-            <li>Read</li>
-            <li>Edit</li>
-            <li>View history</li>
-          </ul>
-        </nav>
+
         <form class="search-menu">
-          <input type="search">
+          <p><input class="search" type="text" id="search" placeholder="Search">
+          <img id="nagyito" src="img/search.png" alt="nagyito" /></p>
+
         </form>
 
       </header>
 
       <main class="main-content">
 
-        <h1>Create account</h1>
+        <h1 class="create-account">Create account</h1>
 
         <form>
-          <p><label
-           for="valami" class="label-username">Username</label></p>
+          <p id="help-me-choose"><a href="#">(help me choose)</a></p>
+          <p><label class="username-label"
+           for="valami">Username</label></p>
           <p><input class="main-input" type="text" id="valami" placeholder="Enter your username"></p>
           <p><label for"jelszo">Password</label></p>
           <p><input class="main-input" type="password" id="jelszo" placeholder="Enter a password"></p>
@@ -64,6 +57,36 @@
 
       <aside class="main-sidebar">
         <a class="logo" href="#">Wikipedia</a>
+        <ul id="main-page" class="sidebar">
+          <li>Main page</li>
+          <li>Contents</li>
+          <li>Featured content</li>
+          <li>Current events</li>
+          <li>Random article</li>
+          <li>Donate to Wikipedia</li>
+          <li>Wikipedia store</li>
+        </ul>
+
+        <ul id="interaction" class="sidebar">
+          <h4>Interaction</h4>
+          <li>Help</li>
+          <li>About Wikipedia</li>
+          <li>Community portal</li>
+          <li>Recent changes</li>
+          <li>Contact page</li>
+        </ul>
+
+        <ul id="tools" class="sidebar">
+          <h4>Tools</h4>
+          <li>Upload file</li>
+          <li>Special pages</li>
+          <li>Printable version</li>
+        </ul>
+
+        <ul id="languages" class="sidebar">
+          <h4>Languages</h4>
+
+        </ul>
       </aside>
 
   </body>
