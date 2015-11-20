@@ -51,11 +51,19 @@
         </div>
 
         <div class="biography">
-          <h3 id="biography-h3">Margaret Hamilton</h3>
+          <h3>Margaret Hamilton</h3>
           <img src="img/220px-Margaret_Hamilton_1995.jpg" alt="Margaret Hamilton in 1995" />
-          <p>
-
-          </p>
+          <p>Hamilton in 1995</p>
+          <dl class="">
+            <dt>Born</dt>
+            <dd>August 17, 1936 (age 79) <a href="https://en.wikipedia.org/wiki/Paoli,_Indiana">Paoli, Indiana</a></dd>
+            <dt>Education</dt>
+            <dd><a href="https://en.wikipedia.org/wiki/Earlham_College">Earlham College</a></dd>
+            <dt>Occupation</dt>
+            <dd>CEO of Hamilton Technologies, Inc. <a href="https://en.wikipedia.org/wiki/Computer_scientist">Computer scientist</a></dd>
+            <dt>Spouse(s)</dt>
+            <dd>James Cox Hamilton</dd>
+          </dl>
         </div>
 
           <article class="">
@@ -64,12 +72,36 @@
 
             <p>Hamilton has published over 130 papers, proceedings, and reports concerned with the 60 projects and six major programs in which she has been involved.</p>
 
-          <h2>Early life</h2>
+          <div class="contents">
+            <h3>Contents</h3>
+            <ul>
+              <li><a href="#Early life">1 Early life</a></li>
+              <li><a href="#NASA">2 NASA</a>
+                <ul>
+                  <li><a href="#apollo">2.1 Apollo 11</a></li>
+                </ul>
+              </li>
+              <li><a href="#Business">3 Business</a></li>
+              <li><a href="#Legacy">4 Legacy</a>
+                <ul>
+                <li><a href="#Awards">4.1 Awards</a></li>
+              </ul></li>
+              <li><a href="#Personal-life">5 Personal life</a></li>
+              <li><a href="#Publications">6 Publications</a></li>
+              <li><a href="#References">7 References</a></li>
+            </ul>
+          </div>
+
+          <h2 id="Early life">Early life</h2>
             <p>Margaret Heafield was born to Kenneth Heafield and Ruth Esther Heafield (née Partington).[5] She graduated from Hancock High School in 1954, and earned a B.A. in mathematics with a minor in philosophy from Earlham College in 1958.[6] After graduation, she briefly taught high school math and French while her husband finished earning his undergraduate degree. She moved to Boston, Massachusetts, with the intention of doing graduate study in abstract mathematics at Brandeis University. In 1960 she took an interim position at MIT to develop software for predicting weather on the LGP-30 and the PDP-1 computers (at Marvin Minsky's Project MAC) for professor Edward Norton Lorenz in the meteorology department.[1][7] At that time, computer science and software engineering were not yet disciplines; instead, programmers learned on the job with hands-on experience.[2]</p>
 
             <p>From 1961 to 1963, she worked on the SAGE Project at Lincoln Labs, where she was one of the programmers who wrote software for the first AN/FSQ-7 computer (the XD-1), to search for "unfriendly" aircraft; she also wrote software for the Air Force Cambridge Research Laboratories.</p>
 
-          <h2>NASA</h2>
+          <h2 id="NASA">NASA</h2>
+              <div class="nasa-photo">
+                <img src="img/Margaret_Hamilton_in_action.jpg" alt="" />
+                <p>Hamilton during her time as lead Apollo flight software designer.</p>
+              </div>
             <p>Hamilton then joined the Charles Stark Draper Laboratory at MIT, which at the time was working on the Apollo space mission. She eventually became the director and supervisor of software programming for Apollo and Skylab.[8]</p>
 
             <p>At NASA, Hamilton's team was responsible for helping pioneer the Apollo on-board guidance software required to navigate and land on the Moon, and its multiple variations used on numerous missions (including the subsequent Skylab).[2] She worked to gain hands-on experience during a time when computer science and software engineering courses or disciplines were non-existent.</p>
@@ -78,21 +110,69 @@
 
             <p>She was one of those who developed concepts of asynchronous software, priority scheduling, and Human-in-the-loop decision capability, which became the foundation for modern, ultra-reliable software design.</p>
 
-          <h3>Apollo 11</h3>
+          <h3 id="apollo">Apollo 11</h3>
+          <div class="nasa-photo">
+            <img src="img/Margaret_Hamilton.jpg" alt="" />
+            <p>Margaret Hamilton standing next to listings of the actual Apollo Guidance Computer (AGC) source code</p>
+          </div>
             <p>Hamilton's work in the Apollo Guidance Computer software prevented an abort of the Apollo 11 Moon landing:[3] Three minutes before the Lunar lander reached the Moon's surface, several computer alarms were triggered. The computer was overloaded with incoming data, because the rendezvous radar system (not necessary for landing) updated an involuntary counter in the computer, which stole cycles from the computer. Due to its robust architecture, the computer was able to keep running; the Apollo onboard flight software was developed using an asynchronous executive so that higher priority jobs (important for landing) could interrupt lower priority jobs. The fault was attributed to a faulty checklist.</p>
 
-            <p>Due to an error in the checklist manual, the rendezvous radar switch was placed in the wrong position. This caused it to send erroneous signals to the computer. The result was that the computer was being asked to perform all of its normal functions for landing while receiving an extra load of spurious data which used up 15% of its time. The computer (or rather the software in it) was smart enough to recognize that it was being asked to perform more tasks than it should be performing. It then sent out an alarm, which meant to the astronaut, I'm overloaded with more tasks than I should be doing at this time and I'm going to keep only the more important tasks; i.e., the ones needed for landing ... Actually, the computer was programmed to do more than recognize error conditions. A complete set of recovery programs was incorporated into the software. The software's action, in this case, was to eliminate lower priority tasks and re-establish the more important ones ... If the computer hadn't recognized this problem and taken recovery action, I doubt if Apollo 11 would have been the successful moon landing it was. - Margaret Hamilton, Director of Apollo Flight Computer Programming MIT Draper Laboratory, Cambridge, Massachusetts, "Computer Got Loaded", Letter to Datamation, March 1, 1971[10]</p>
+            <p class="citation">Due to an error in the checklist manual, the rendezvous radar switch was placed in the wrong position. This caused it to send erroneous signals to the computer. The result was that the computer was being asked to perform all of its normal functions for landing while receiving an extra load of spurious data which used up 15% of its time. The computer (or rather the software in it) was smart enough to recognize that it was being asked to perform more tasks than it should be performing. It then sent out an alarm, which meant to the astronaut, I'm overloaded with more tasks than I should be doing at this time and I'm going to keep only the more important tasks; i.e., the ones needed for landing ... Actually, the computer was programmed to do more than recognize error conditions. A complete set of recovery programs was incorporated into the software. The software's action, in this case, was to eliminate lower priority tasks and re-establish the more important ones ... If the computer hadn't recognized this problem and taken recovery action, I doubt if Apollo 11 would have been the successful moon landing it was. </p>
 
-          <h2>Business</h2>
+            <p class="citation2">
+              - Margaret Hamilton, Director of Apollo Flight Computer Programming MIT Draper Laboratory, Cambridge, Massachusetts, "Computer Got Loaded", Letter to <a href="https://en.wikipedia.org/wiki/Datamation">Datamation</a>, March 1, 1971[10]
+            </p>
+
+          <h2 id="Business">Business</h2>
             <p>From 1976 through 1984, Hamilton was the CEO of a company she co-founded called Higher Order Software (HOS), that created a product called USE.IT, based on the HOS methodology.[11][12][13]</p>
 
             <p>In 1986, she became the founder and CEO of Hamilton Technologies, Inc. in Cambridge, Massachusetts. The company was developed around the Universal Systems Language (USL) and its associated automated environment, the 001 Tool Suite, based on her paradigm of Development Before The Fact (DBTF) for systems design and software development.[4][14][15][16]</p>
 
-          <h2>Legacy</h2>
+          <h2 id="Legacy">Legacy</h2>
+          <div class="nasa-photo">
+            <img src="img/Margaret_Hamilton_1989.jpg" alt="" />
+            <p>Official photo for <a href="https://en.wikipedia.org/wiki/NASA">NASA</a>, 1989.</p>
+          </div>
             <p>Hamilton is credited with coining the term "software engineering".[17] In this field she was one of those who developed the concepts of asynchronous software, priority scheduling, end-to-end testing, and human-in-the-loop decision capability, such as priority displays which then became the foundation for ultra reliable software design.[18]</p>
+
+          <h3 id="Awards">Awards</h3>
+          <ul>
+            <li>1986, Augusta Ada Lovelace Award, Association for Women in Computing.[6]</li>
+            <li>2003, NASA Exceptional Space Act Award for scientific and technical contributions. The award included $37,200, the largest amount awarded to any individual in NASA's history.[3][18][19]</li>
+            <li>2009, Outstanding Alumni Award, Earlham College.[6]</li>
+          </ul>
+
+          <h2 id=Personal-life>Personal life</h3>
+          <p>
+            She met her husband James Cox Hamilton while at Earlham College. They married in the late 1950s after Heafield earned her bachelor's degree. They had a daughter together named Lauren. The couple eventually divorced.[20]
+          </p>
+
+          <h2 id="Publications">Publications</h2>
+          <p>
+            <ul>
+              <li>M. Hamilton (1994), "Inside Development Before the Fact," cover story, Special Editorial Supplement, 8ES-24ES. Electronic Design, Apr. 1994.</li>
+              <li>  M. Hamilton (1994), "001: A Full Life Cycle Systems Engineering and Software Development Environment," cover story, Special Editorial Supplement, 22ES-30ES. Electronic Design, Jun. 1994.</li>
+              <li>M. Hamilton, Hackler, W. R.. (2004), Deeply Integrated Guidance Navigation Unit (DI-GNU) Common Software Architecture Principles (revised dec-29-04), DAAAE30-02-D-1020 and DAAB07-98-D-H502/0180, Picatinny Arsenal, NJ, 2003-2004.</li>
+              <li>M. Hamilton and W. R. Hackler (2007), "Universal Systems Language for Preventative Systems Engineering," Proc. 5th Ann. Conf. Systems Eng. Res. (CSER), Stevens Institute of Technology, Mar. 2007, paper #36.</li>
+              <li>M. Hamilton and W. R. Hackler (2007), "A Formal Universal Systems Semantics for SysML", 17th Annual International Symposium, INCOSE 2007, San Diego, CA, Jun. 2007.</li>
+              <li>M. Hamilton and W. R. Hackler (2008), "Universal Systems Language: Lessons Learned from Apollo", IEEE Computer, Dec. 2008.</li>
+            </ul>
+          </p>
+
+          <h2 id="References">References</h2>
+          <img src="img/ref.jpg" alt="references" />
           </article>
         </main>
       <footer class="main-footer">
+        <p>This page was last modified on 12 November 2015, at 01:10.</p>
+        <p>Text is available under the <a href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a>; additional terms may apply. By using this site, you agree to the <a href="https://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="https://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="https://wikimediafoundation.org/wiki/Home">Wikimedia Foundation, Inc.</a>, a non-profit organization.</p>
+        <p class="footer-link">
+           <a href="https://wikimediafoundation.org/wiki/Privacy_policy">Privacy policy</a> <a href="https://en.wikipedia.org/wiki/Wikipedia:About">About Wikipedia</a>  <a href="https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer">Disclaimers</a>  <a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a>  <a href="https://www.mediawiki.org/wiki/How_to_contribute">Developers</a>  <a href="https://en.m.wikipedia.org/wiki/Margaret_Hamilton_(scientist)">Mobile view</a>
+        </p>
+        <p class="wiki-button">
+          <img src="img/wikimedia-button (1).jpg" alt="logo" />
+          <img src="img/poweredby_mediawiki_88x31.jpg" alt="logo2" />
+        </p>
       </footer>
 
     </div>
@@ -100,13 +180,13 @@
       <aside class="main-sidebar">
         <a class="logo" href="#">Wikipedia</a>
         <ul class="sidebar main-page">
-          <li><a href="#">Main page</a></li>
-          <li><a href="#">Contents</a></li>
-          <li><a href="#">Featured content</a></li>
-          <li><a href="#">Current events</a></li>
-          <li><a href="#">Random article</a></li>
-          <li><a href="#">Donate to Wikipedia</a></li>
-          <li><a href="#">Wikipedia store</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Main_Page">Main page</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Portal:Contents">Contents</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Portal:Featured_content">Featured content</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Portal:Current_events">Current events</a></li>
+          <li><a href="http://33.media.tumblr.com/5e5c2d69596cc4eb405e3ad41ba943cc/tumblr_nc7bh35uM01swbfwgo1_400.gif">Random article</a></li>
+          <li><a href="https://donate.wikimedia.org/w/index.php?title=Special:FundraiserLandingPage&country=HU&uselang=en&utm_medium=sidebar&utm_source=donate&utm_campaign=C13_en.wikipedia.org">Donate to Wikipedia</a></li>
+          <li><a href="https://store.wikimedia.org/">Wikipedia store</a></li>
         </ul>
 
         <ul class="sidebar">
@@ -157,6 +237,7 @@
           <li><a href="#">中文</a></li>
         </ul>
       </aside>
+
 
   </body>
 </html>

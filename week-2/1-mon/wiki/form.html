@@ -11,31 +11,28 @@
       <header class="main-header">
         <nav class="user-menu">
           <ul>
-            <li><a id="create-account" href="#">Create account</a></li>
-            <li><a id="log-in" href="#">Log in</a></li>
+            <li><a class="create-account" href="#">Create account</a></li>
+            <li><a class="log-in" href="#">Log in</a></li>
           </ul>
         </nav>
 
-        <nav class="talk-menu">
+        <nav class="talk-menu tab active-tab">
           <ul>
-            <li>Special page</li>
+            <li class=""><a href="#">Special page</a></li>
           </ul>
         </nav>
 
-
-        <form class="search-menu">
-          <p><input class="search" type="text" id="search" placeholder="Search">
-          <img id="nagyito" src="img/search.png" alt="nagyito" /></p>
-
+        <form class="search-menu2">
+          <input type="search" placeholder="Search">
+          <input type="submit" value="">
         </form>
 
       </header>
 
       <main class="main-content">
-
-        <h1 class="create-account">Create account</h1>
-
-        <form>
+        <h1>Create account</h1>
+        <img class="account" src="img/account.jpg" alt="account" />
+        <form class="create-account">
           <p id="help-me-choose"><a href="#">(help me choose)</a></p>
           <p><label class="username-label"
            for="valami">Username</label></p>
@@ -46,46 +43,63 @@
           <p><input class="main-input"  type="password" id="jelszo" placeholder="Enter password again"></p>
           <p><label for"emailcim">Email address (optional)</label></p>
           <p><input class="main-input" type="email" id="emailcim" placeholder="Enter your email address"></p>
-          <p><button type="submit">Create your account</button></p>
+          <p class="cacc">
+            To edit this page, please enter the words that appear below in the box (more info):</p>
+            <p class="cacc">
+              CAPTCHA Security check
+            </p>
+          <div class="captcha">
+
+            <p><button type="submit">Create your account</button></p>
+          </div>
+
+
     </form>
-      </main>
+  </main>
 
       <footer class="main-footer">
+        <p class="footer-link">
+           <a href="https://wikimediafoundation.org/wiki/Privacy_policy">Privacy policy</a> <a href="https://en.wikipedia.org/wiki/Wikipedia:About">About Wikipedia</a>  <a href="https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer">Disclaimers</a>  <a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a>  <a href="https://www.mediawiki.org/wiki/How_to_contribute">Developers</a>  <a href="https://en.m.wikipedia.org/wiki/Margaret_Hamilton_(scientist)">Mobile view</a>
+        </p>
+        <p class="wiki-button">
+          <img src="img/wikimedia-button (1).jpg" alt="logo" />
+          <img src="img/poweredby_mediawiki_88x31.jpg" alt="logo2" />
+        </p>
+      </footer>
       </footer>
 
     </div>
 
       <aside class="main-sidebar">
         <a class="logo" href="#">Wikipedia</a>
-        <ul id="main-page" class="sidebar">
-          <li>Main page</li>
-          <li>Contents</li>
-          <li>Featured content</li>
-          <li>Current events</li>
-          <li>Random article</li>
-          <li>Donate to Wikipedia</li>
-          <li>Wikipedia store</li>
+        <ul class="main-page" class="sidebar">
+          <li><a href="https://en.wikipedia.org/wiki/Main_Page">Main page</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Portal:Contents">Contents</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Portal:Featured_content">Featured content</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Portal:Current_events">Current events</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Cooperconcha_centralis">Random article</a></li>
+          <li><a href="https://donate.wikimedia.org/w/index.php?title=Special:FundraiserLandingPage&country=HU&uselang=en&utm_medium=sidebar&utm_source=donate&utm_campaign=C13_en.wikipedia.org">Donate to Wikipedia</a></li>
+          <li><a href="https://store.wikimedia.org/">Wikipedia store</a></li>
         </ul>
 
-        <ul id="interaction" class="sidebar">
+        <ul class="interaction" class="sidebar">
           <h4>Interaction</h4>
-          <li>Help</li>
-          <li>About Wikipedia</li>
-          <li>Community portal</li>
-          <li>Recent changes</li>
-          <li>Contact page</li>
+          <li><a href="https://en.wikipedia.org/wiki/Help:Contents">Help</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Wikipedia:About">About Wikipedia</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Wikipedia:Community_portal">Community portal</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Special:RecentChanges">Recent changes</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
         </ul>
 
-        <ul id="tools" class="sidebar">
+        <ul class="tools" class="sidebar">
           <h4>Tools</h4>
-          <li>Upload file</li>
-          <li>Special pages</li>
-          <li>Printable version</li>
+          <li><a href="https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard">Upload file</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Special:SpecialPages">Special pages</a></li>
+          <li><a href="https://en.wikipedia.org/w/index.php?title=Special:UserLogin&returnto=Main+Page&type=signup&printable=yes">Printable version</a></li>
         </ul>
 
-        <ul id="languages" class="sidebar">
+        <ul class="languages" class="sidebar">
           <h4>Languages</h4>
-
         </ul>
       </aside>
 

@@ -16,6 +16,7 @@ h2 {
   font-family: serif;
   font-weight: normal;
   margin: 0;
+  overflow: hidden;
 }
 
 h1 {
@@ -40,11 +41,6 @@ h4 {
   font-weight: normal;
   margin: 0;
   font-size: 12px;
-}
-
-#biography-h3 {
-  margin: 0;
-  padding: 0;
 }
 
 a {
@@ -199,6 +195,19 @@ input[type="search"]::-webkit-search-cancel-button {
   outline: 0;
 }
 
+
+.account{
+  float: right;
+  margin-top: 20px;
+  padding-right: 91px;
+}
+
+.cacc {
+  font-size: 14px;
+  padding-bottom: 11px;
+  width: 311px;
+}
+
 .main-content {
   background-color: #ffffff;
   border-bottom: 1px solid #a7d7f9;
@@ -236,11 +245,92 @@ input[type="search"]::-webkit-search-cancel-button {
   width: 270px;
 }
 
+.biography h3 {
+  margin: 0;
+  padding: 5px 40px 5px 40px;
+}
+
+.biography p {
+  display: flex;
+  font-size: 12px;
+  justify-content: center;
+}
+
+.biography dl {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+.biography dt {
+  font-size: 13px;
+  font-weight: bold;
+  width: 40%;
+  padding: 0;
+  margin: 0;
+}
+
+.biography dd {
+  font-size: 13px;
+  width: 60%;
+  padding: 0;
+  margin: 0;
+}
+
 article {
   font-size: 14px;
   line-height: 22.4px;
 }
 
+.contents {
+  padding: auto;
+  border: 1px solid #aaaaaa;
+  width: 111px;
+  background: #f9f9f9;
+  line-height: 20px;
+  margin: 5px 0px 0px 5px;
+}
+
+.contents h3 {
+  font-size: 13.5px;
+  padding: 8px 10px 0px 10px;
+  margin: 0;
+}
+
+.contents ul {
+  list-style: none;
+  padding: 0px 0px 0px 10px;
+  margin: 5px 0px 8px 0px;
+  font-size: 13.4px;
+}
+
+.nasa-photo {
+  background: #f9f9f9;
+  border: 1px solid #aaaaaa;
+  box-sizing: border-box;
+  float:right;
+  margin: 6px 0px 12px 12px;
+  padding: 3px;
+  width: 230px;
+}
+
+.citation {
+  padding: 11px 291px 11px 46px;
+}
+
+.citation2 {
+  padding: 0px 291px 11px 66px;
+
+}
+
+
+.nasa-photo p {
+  font-size: 12px;
+  line-height: 18px;
+}
 
 input {
   border: 1px solid #ccc;
@@ -304,6 +394,10 @@ button:hover {
   background-color: #008c6d;
 }
 
+.captcha {
+  clear: right;
+}
+
 .logo {
   background: url(../img/logo.png);
   color: transparent;
@@ -341,4 +435,27 @@ button:hover {
 
 .main-sidebar li a {
   color: #0645ad;
+}
+
+footer {
+  padding-top: 20px;
+}
+
+footer p {
+  font-size: 11.3px;
+  padding-top: 10px;
+}
+
+footer a {
+}
+
+.footer-link a {
+  color: #0645ad;
+  padding-left: 10px;
+}
+
+.wiki-button {
+  float: right;
+  padding-top: 0;
+  margin-top: 0;
 }
