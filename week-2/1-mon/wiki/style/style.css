@@ -36,8 +36,6 @@ h3 {
 }
 
 h4 {
-  border-top: 1px solid #aaaaaa;
-  color: #4d4d4d;
   font-weight: normal;
   margin: 0;
   font-size: 12px;
@@ -190,19 +188,11 @@ input[type="search"]::-webkit-search-cancel-button {
   width: 25px;
 }
 
-
 :focus {
   outline: 0;
 }
 
-
-.account{
-  float: right;
-  margin-top: 20px;
-  padding-right: 91px;
-}
-
-.cacc {
+.captcha {
   font-size: 14px;
   padding-bottom: 11px;
   width: 311px;
@@ -259,25 +249,25 @@ input[type="search"]::-webkit-search-cancel-button {
 .biography dl {
   display: flex;
   flex-wrap: wrap;
-  padding: 0;
   margin: 0;
-  line-height: 20px;
   margin-top: 10px;
+  line-height: 20px;
+  padding: 0;
 }
 
 .biography dt {
   font-size: 13px;
   font-weight: bold;
-  width: 40%;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  width: 40%;
 }
 
 .biography dd {
   font-size: 13px;
-  width: 60%;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  width: 60%;
 }
 
 article {
@@ -286,25 +276,25 @@ article {
 }
 
 .contents {
-  padding: auto;
-  border: 1px solid #aaaaaa;
-  width: 111px;
   background: #f9f9f9;
+  border: 1px solid #aaaaaa;
   line-height: 20px;
   margin: 5px 0px 0px 5px;
+  padding: auto;
+  width: 111px;
 }
 
 .contents h3 {
   font-size: 13.5px;
-  padding: 8px 10px 0px 10px;
   margin: 0;
+  padding: 8px 10px 0px 10px;
 }
 
 .contents ul {
   list-style: none;
-  padding: 0px 0px 0px 10px;
-  margin: 5px 0px 8px 0px;
   font-size: 13.4px;
+  margin: 5px 0px 8px 0px;
+  padding: 0px 0px 0px 10px;
 }
 
 .nasa-photo {
@@ -326,7 +316,6 @@ article {
 
 }
 
-
 .nasa-photo p {
   font-size: 12px;
   line-height: 18px;
@@ -334,10 +323,6 @@ article {
 
 input {
   border: 1px solid #ccc;
-}
-
-.valami {
-  width: 300px;
 }
 
 .main-footer {
@@ -357,7 +342,7 @@ p   {
   margin: 0;
 }
 
-#help-me-choose {
+.help-me-choose {
   color: #0645ad;
   display: block;
   font-size: 14px;
@@ -394,10 +379,6 @@ button:hover {
   background-color: #008c6d;
 }
 
-.captcha {
-  clear: right;
-}
-
 .logo {
   background: url(../img/logo.png);
   color: transparent;
@@ -405,6 +386,13 @@ button:hover {
   height: 155px;
   margin: 6px auto 0;
   width: 135px;
+}
+
+.line {
+  background: linear-gradient(to right, #f6f6f6, #d8d8d8, #f6f6f6);
+  height: 1px;
+  margin-bottom: 5px;
+  width: 136px;
 }
 
 .main-sidebar {
@@ -420,9 +408,9 @@ button:hover {
   font-size: 12px;
   list-style: none;
   line-height: 19px;
+  margin-bottom: 0;
   padding-left: 25px;
   padding-top: 0;
-  margin-bottom: 0;
 }
 
 .main-sidebar li {
@@ -446,9 +434,6 @@ footer p {
   padding-top: 10px;
 }
 
-footer a {
-}
-
 .footer-link a {
   color: #0645ad;
   padding-left: 10px;
@@ -456,6 +441,6 @@ footer a {
 
 .wiki-button {
   float: right;
-  padding-top: 0;
   margin-top: 0;
+  padding-top: 0;
 }
