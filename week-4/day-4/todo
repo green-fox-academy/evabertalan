@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+import sys
+import todo
+
+
+print("Szia!")
+if len(sys.argv)!=1:
+    if (sys.argv[1]=='--help'):
+
+    if (sys.argv[1]=='add'):
+        todo.add_todo()
+    if (sys.argv[1]=='ls'):
+        todo.list_todo()
+    if (sys.argv[1]=='rm'):
+        todo.remove_todo()
+    if (sys.argv[1]=='ch'):
+        todo.completed_todo()
+    if (sys.argv[1]=='uch'):
+        todo.uncompleted_todo()
+else:
+    todo.list_todo()
