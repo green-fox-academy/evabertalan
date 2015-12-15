@@ -3,11 +3,7 @@ class Menu():
         self.items=items
 
     def print_menu_items(self):
-        output = ""
-        for i,j in enumerate(self.items):
-            for key, value in j.items():
-                output += str(i+1) + ". " + key + "\n"
-        return output
+        return '\n'.join(list(map(lambda u: u['name'], self.items)))
 
     def select_menu_item(self):
         selected_item=int(input('Select menu item: '))
@@ -17,4 +13,7 @@ class Menu():
         except ValueError:
             print('You entered a wrong value.')
             self.select_menu_item()
-        return selected_item
+        for i in (range(len(self.items))):
+            if selected_item==i+1:
+                alma = self.items[i]['function']
+                return alma()
