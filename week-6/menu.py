@@ -13,7 +13,4 @@ class Menu():
         except ValueError:
             print('You entered a wrong value.')
             self.select_menu_item()
-        for i in (range(len(self.items))):
-            if selected_item==i+1:
-                alma = self.items[i]['function']
-                return alma()
+        return(self.items[selected_item-1]['function']())
