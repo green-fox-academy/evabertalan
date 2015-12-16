@@ -1,17 +1,21 @@
-import menu
+from menu import Menu
 import random
+from character import Character
+from menu_item import MenuItem
 
-def begin_game():
-    print("begin_game")
-    pass
+user_name=''
+
+def user_character():
+    player=Character(user_name,4,5,6,3)
+    print(player.get_character())
 
 def potion_submenu():
-    potion_submenu_items=[{'name':'1. Reselect the Potion', 'function': select_potion},
-                        {'name':'2. Continue', 'function': begin_game},
-                        {'name':'3. Quit', 'function': quit_game}]
-    potion_sub=menu.Menu(potion_submenu_items)
-    print(potion_sub.print_menu_items())
-    potion_submenu_item=potion_sub.select_menu_item()
+    potion_submenu_items=Menu([
+                            MenuItem(1, "Reselect the Potion", select_potion),
+                            MenuItem(2, "Continue", user_character),
+                            MenuItem(3, "Quit", quit_game)])
+    potion_submenu_items.print_menu_items()
+    potion_submenu_item=potion_submenu_items.select_menu_item()
 
 def potion_of_dexterity():
     print("Your selected potion is dexterity")
@@ -29,12 +33,12 @@ def potion_of_health():
 def select_potion():
     print(" ")
     print("Select potion:")
-    select_potion_items=[{'name':'1. Potion of Health', 'function': potion_of_health},
-                        {'name':'2. Potion of Dexterity', 'function': potion_of_dexterity},
-                        {'name':'3. Potion of Luck', 'function': potion_of_luck}]
-    potion=menu.Menu(select_potion_items)
-    print(potion.print_menu_items())
-    select_potion_item=potion.select_menu_item()
+    select_potion_items=Menu([
+                    MenuItem(1, "Potion of Health", potion_of_health),
+                    MenuItem(2, "Potion of Dexterity", potion_of_dexterity),
+                    MenuItem(3, "Potion of Luck", potion_of_luck)])
+    select_potion_items.print_menu_items()
+    select_potion_item=select_potion_items.select_menu_item()
 
 def save_and_quit():
     print("save and qoiut")
@@ -55,8 +59,14 @@ def resume():
     pass
 
 def reenter_name():
-    print("reenter_name")
-    pass
+    sure_reenter=input("Would you like to retipe your character name (Y or N)? ")
+    if sure_reenter=="Y" or sure_reenter=="y":
+        new_game()
+    elif sure_reenter=="N" or sure_reenter=="n":
+        roll_stat_game()
+    else:
+        print("Wrong input")
+        reenter_name()
 
 def roll_stat_game():
     dexterity=random.randint(1, 6)
@@ -65,49 +75,49 @@ def roll_stat_game():
     print("Your dexterity points are: " + str(dexterity) +" + 6 = " + str(dexterity+6))
     print("Your health points are: "+ str(health) +" + 12 = " + str(health+12))
     print("Your health points are: "+ str(luck) +" + 6 = " + str(luck+6))
-    roll_stat_items=[{'name':'1. Reroll stats', 'function': roll_stat_game},
-                        {'name':'2. Continue', 'function': select_potion},
-                        {'name':'3. Save', 'function': save_game},
-                        {'name':'4. Quit', 'function': quit_game}]
-    roll_stat=menu.Menu(roll_stat_items)
-    print(roll_stat.print_menu_items())
-    roll_stat_item=roll_stat.select_menu_item()
+    roll_stat_items=Menu([
+                    MenuItem(1, "Reroll stats", roll_stat_game),
+                    MenuItem(2, "Continue", select_potion),
+                    MenuItem(3, "Save", save_game),
+                    MenuItem(4, "Quit", quit_game)])
+    roll_stat_items.print_menu_items()
+    roll_stat_item=roll_stat_items.select_menu_item()
 
 def save_game():
     print("save_game")
     pass
 
 def quit_game():
-    quit_items=[{'name':'1. Save and Quit', 'function': save_and_quit},
-                {'name':'2. Quit without save', 'function': quit_without_save},
-                {'name':'3. Resume', 'function': resume}]
-    quit=menu.Menu(quit_items)
-    print(quit.print_menu_items())
-    quit_item=quit.select_menu_item()
-
+    quit_items=Menu([
+                    MenuItem(1, "Save and Quit", save_and_quit),
+                    MenuItem(2, "Quit without save", quit_without_save),
+                    MenuItem(3, "Resume", resume)])
+    quit_items.print_menu_items()
+    quit_item=quit_items.select_menu_item()
 
 def new_game():
+    global user_name
     user_name=input('What is your name? ')
     print('Your name is: '+ user_name)
-    submenu_items=[{'name':'1. Reenter name', 'function': reenter_name},
-                    {'name':'2. Continue', 'function': roll_stat_game},
-                    {'name':'3. Save', 'function': save_game},
-                    {'name':'4. Quit', 'function': quit_game},]
-    submenu=menu.Menu(submenu_items)
-    print(submenu.print_menu_items())
-    sub_item=submenu.select_menu_item()
+    submenu_items=Menu([
+                    MenuItem(1, "Reenter name", reenter_name),
+                    MenuItem(2, "Continue", roll_stat_game),
+                    MenuItem(3, "Save", save_game),
+                    MenuItem(4, "Quit", quit_game)])
+    submenu_items.print_menu_items()
+    sub_item=submenu_items.select_menu_item()
 
 def load_game():
-    print('kaki')
+    print('kaki ez a load game')
     pass
 
 def exit():
     pass
 
-main_items=[{'name':'1. New game', 'function': new_game},
-            {'name':'2. Load game', 'function': load_game},
-            {'name':'3. Exit', 'function':exit}]
+main_items=Menu([
+                MenuItem(1, "New game", new_game),
+                MenuItem(2, "Load game", load_game),
+                MenuItem(3, "Exit", exit)])
 
-main_menu=menu.Menu(main_items)
-print(main_menu.print_menu_items())
-item=main_menu.select_menu_item()
+main_items.print_menu_items()
+item=main_items.select_menu_item()
