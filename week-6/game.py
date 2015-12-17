@@ -3,9 +3,71 @@ from character import Character
 from menu_item import MenuItem
 
 character=Character("", 0, 0, 0, 0)
+monster=Character("Monster", 0, 0, 0, 0)
+attack=True
+
+def after_strike():
+    global attack
+    if attack==True:
+        print("The Monster lost. -2 from his health")
+        print("Monster health: ")
+        print(monster.lost_health())
+        print(character.begin_character())
+    elif attack==False:
+        print("You lost. -2 from your health")
+        print(character.lost_health)
+        print(character.lost_character)
+        print(monster.monster)
+    pass
+
+def try_luck():
+    print("try_luck")
+
+def retreat():
+    print(":(")
+
+def after_strike_menu():
+    after_strike_items=Menu([
+                            MenuItem(1, "Continue", after_strike),
+                            MenuItem(2, "Try your Luck", try_luck),
+                            MenuItem(3, "Retreat", retreat),
+                            MenuItem(4, "Quit", quit_game)])
+    after_strike_items.print_menu_items()
+    after_strike_item=after_strike_items.select_menu_item()
+
+def strike():
+    character.dexterity=character.dexterity+character.get_random()+character.get_random()+12
+    monster.dexterity=monster.dexterity+character.get_random()+character.get_random()+12
+    print(("-*")*30)
+    print("Character dexterity: " + str(character.dexterity))
+    print("Monster dexterity: " + str(monster.dexterity))
+    if monster.dexterity<character.dexterity:
+        print("You hit the monster")
+        print(("-*")*30)
+        global attack
+        attack=True
+        after_strike_menu()
+    elif monster.dexterity>character.dexterity:
+        print("The monster hit you")
+        print(("-*")*30)
+        global attack
+        attack=False
+        after_strike_menu()
+    elif monster.dexterity==character.dexterity:
+        print("egyenlo")
+        strike()
 
 def begin():
-    pass
+    print(("-*")*30)
+    print("Test your Sword in a test fight")
+    print(character.begin_character())
+    print(monster.monster())
+    begin_submenu_items=Menu([
+                            MenuItem(1, "Strike", strike),
+                            MenuItem(2, "Retreat", begin),
+                            MenuItem(3, "Quit", quit_game)])
+    begin_submenu_items.print_menu_items()
+    begin_submenu_item=begin_submenu_items.select_menu_item()
 
 def print_character():
     print(character.get_character())
