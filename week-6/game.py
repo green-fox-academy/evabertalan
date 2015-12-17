@@ -1,33 +1,43 @@
 from menu import Menu
-import random
 from character import Character
 from menu_item import MenuItem
 
-user_name=''
+character=Character("", 0, 0, 0, 0)
 
-def user_character():
-    player=Character(user_name,4,5,6,3)
-    print(player.get_character())
+def begin():
+    pass
+
+def print_character():
+    print(character.get_character())
+    print_submenu_items=Menu([
+                            MenuItem(1, "Begin", begin),
+                            MenuItem(2, "Save", save_game),
+                            MenuItem(3, "Quit", quit_game)])
+    print_submenu_items.print_menu_items()
+    print_submenu_item=print_submenu_items.select_menu_item()
 
 def potion_submenu():
     potion_submenu_items=Menu([
                             MenuItem(1, "Reselect the Potion", select_potion),
-                            MenuItem(2, "Continue", user_character),
+                            MenuItem(2, "Continue", print_character),
                             MenuItem(3, "Quit", quit_game)])
     potion_submenu_items.print_menu_items()
     potion_submenu_item=potion_submenu_items.select_menu_item()
 
 def potion_of_dexterity():
     print("Your selected potion is dexterity")
+    character.get_inventory("dexterity")
     return potion_submenu()
 
 
 def potion_of_luck():
     print("Your selected potion is luck")
+    character.get_inventory("luck")
     return potion_submenu()
 
 def potion_of_health():
     print("Your selected potion is health")
+    character.get_inventory("health")
     return potion_submenu()
 
 def select_potion():
@@ -69,12 +79,9 @@ def reenter_name():
         reenter_name()
 
 def roll_stat_game():
-    dexterity=random.randint(1, 6)
-    health=random.randint(1, 12)
-    luck=random.randint(1, 6)
-    print("Your dexterity points are: " + str(dexterity) +" + 6 = " + str(dexterity+6))
-    print("Your health points are: "+ str(health) +" + 12 = " + str(health+12))
-    print("Your health points are: "+ str(luck) +" + 6 = " + str(luck+6))
+    character.get_dexterity()
+    character.get_luck()
+    character.get_health()
     roll_stat_items=Menu([
                     MenuItem(1, "Reroll stats", roll_stat_game),
                     MenuItem(2, "Continue", select_potion),
@@ -96,9 +103,8 @@ def quit_game():
     quit_item=quit_items.select_menu_item()
 
 def new_game():
-    global user_name
-    user_name=input('What is your name? ')
-    print('Your name is: '+ user_name)
+    character.name=input('What is your name? ')
+    print('Your name is: '+ character.name)
     submenu_items=Menu([
                     MenuItem(1, "Reenter name", reenter_name),
                     MenuItem(2, "Continue", roll_stat_game),
