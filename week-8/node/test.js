@@ -11,5 +11,10 @@ tape('roman converter', function(t) {
   t.equal(arabic2roman(4), 'IV')
   t.equal(arabic2roman(5), 'V')
   t.equal(arabic2roman(6), 'VI')
+  t.equal(arabic2roman(7), 'VII')
+  t.equal(arabic2roman(8), 'VIII')
+  t.equal(arabic2roman(9), 'IX')
+  t.equal(arabic2roman(10), 'X')
+  t.equal(arabic2roman(23), 'XXIII')
   t.end();
 });
