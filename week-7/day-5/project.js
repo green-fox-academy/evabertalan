@@ -1,7 +1,14 @@
 'use strict';
 
 var kep = document.querySelector('img');
-var kepek = ['img/1.png', 'img/2.png', 'img/3.png', 'img/9.png','img/11.png','img/19.png','img/22.png','img/27.png'];
+var kepek = ['img/1.png',
+              'img/2.png', 
+              'img/3.png',
+               'img/9.png',
+              'img/11.png',
+              'img/19.png',
+              'img/22.png',
+              'img/27.png'];
 var i = 0;
 
 function kepcsinalo () {
@@ -29,7 +36,7 @@ visszagomb.addEventListener('click', function() {
 
 var thumb = document.querySelector('.thumbnails');
 
-function kiskepcsinalo (src) {
+function thumbnailsCreater (src) {
   var ujkep = document.createElement('img');
   ujkep.setAttribute('src', src);
   thumb.appendChild(ujkep);
@@ -37,18 +44,18 @@ function kiskepcsinalo (src) {
 }
 
 for (var j=1; j < kepek.length; j++) {
-  kiskepcsinalo(kepek[j]);
+  thumbnailsCreater(kepek[j]);
 }
 
 thumb.addEventListener('click', function(e) {
   kep.setAttribute('src', e.target.src);
   deactivator()
-  e.target.classList.add('active')
+  e.target.classList.add('active');
 });
 
 function deactivator() {
   var actives = document.querySelectorAll('.active');
   for (var k=0; k < actives.length; k++) {
     actives[k].classList.remove('active');
-  }
+  };
 }
