@@ -1,0 +1,65 @@
+body {
+  background-color: #30343F;
+  width: auto;
+  height: auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: #FAFAFF;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.elore, .vissza {
+  padding: 10px;
+  font-size: 14px;
+  font-family: 'Noto Sans', sans-serif;
+  color: white;
+  background-color: #16a085;
+}
+
+.slideshow {
+  padding: 100px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.kepmost {
+  margin: auto;
+
+}
+
+.thumbnails {
+  margin: 20px;
+  background-color: #30343F;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thumbnails img{
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 17%;
+  height: 17%;
+  padding: 5px;
+  transition: background-color 0.5s ease;
+  background-color: white;
+  opacity: 0.4;
+}
+
+.thumbnails img:hover, .thumbnails img.active{
+  background-color: white;
+  opacity: 1;
+  cursor: pointer;
+}
+/*
+.selected {
+  background-color: white;
+  opacity: 1;
+  cursor: pointer;
+}*/
