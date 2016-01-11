@@ -1,30 +1,67 @@
 from menu import Menu
-from character import Character
+from character import *
 from menu_item import MenuItem
+import random
 
-character=Character("", 0, 0, 0, 0)
-monster=Character("Monster", 0, 0, 0, 0)
+user=Player("", 0, 0, 0, 0)
+monster=Character("Monster", 0, 0)
 attack=True
 
 def after_strike():
     global attack
     if attack==True:
-        print("The Monster lost. -2 from his health")
-        print("Monster health: ")
-        print(monster.lost_health())
-        print(character.begin_character())
+        print("Monster: ")
+        print(" Max Health: " + str(monster.health))
+        monster.health=monster.health-2
+        print(" Current Health: " + str(monster.health))
+        print(user.begin_character())
     elif attack==False:
-        print("You lost. -2 from your health")
-        print(character.lost_health)
-        print(character.lost_character)
-        print(monster.monster)
-    pass
+        print(user.name)
+        print(" Max Health: " + str(user.health))
+        user.health=user.health-2
+        print(" Current Health: " + str(user.health))
+        print(user.lost_character())
+        print(monster.monster_status())
 
 def try_luck():
-    print("try_luck")
+    roll=random.randint(1, 6)+random.randint(1, 6)
+    print("Your rolled number: "+str(roll))
+    print("Your luck: " + str(user.luck))
+    if roll>user.luck:
+        if attack==False:
+            print(" Max Health: " + str(user.health))
+            print("You lost 3 health points")
+            user.health=user.health-1
+            print(" Current Health: " + str(user.health))
+        elif attack==True:
+            print(" Max Monster Health: " + str(monster.health))
+            print("Monster lost 1 health points")
+            monster.health=monster.health+1
+            print(" Current Monster Health: " + str(monster.health))
+    elif roll<=user.luck:
+        if attack==False:
+            print(" Max Health: " + str(user.health))
+            print("You lost only 1 health and 1 luck point")
+            user.health=user.health+1
+            user.luck=user.luck-1
+            print(" Current Health: " + str(user.health))
+            print(" Current Luck: " + str(user.luck))
+        elif attack==True:
+            print(" Max Monster Health: " + str(monster.health))
+            print(" Monster lost 4 health and you lost 1 luck ")
+            monster.health=monster.health-2
+            user.luck=user.luck-1
+            print(" Current Monster Health: " + str(monster.health))
+            print(" Current luck: " + str(user.luck))
+
+
+
+    elif roll<user.luck:
+        print("sajfs")
 
 def retreat():
     print(":(")
+    pass
 
 def after_strike_menu():
     after_strike_items=Menu([
@@ -36,32 +73,32 @@ def after_strike_menu():
     after_strike_item=after_strike_items.select_menu_item()
 
 def strike():
-    character.dexterity=character.dexterity+character.get_random()+character.get_random()+12
-    monster.dexterity=monster.dexterity+character.get_random()+character.get_random()+12
+    user.dexterity=user.dexterity+user.get_random()+user.get_random()+12
+    monster.dexterity=monster.dexterity+monster.get_random()+monster.get_random()+12
     print(("-*")*30)
-    print("Character dexterity: " + str(character.dexterity))
+    print("Character dexterity: " + str(user.dexterity))
     print("Monster dexterity: " + str(monster.dexterity))
-    if monster.dexterity<character.dexterity:
+    if monster.dexterity<user.dexterity:
         print("You hit the monster")
         print(("-*")*30)
         global attack
         attack=True
         after_strike_menu()
-    elif monster.dexterity>character.dexterity:
+    elif monster.dexterity>user.dexterity:
         print("The monster hit you")
         print(("-*")*30)
         global attack
         attack=False
         after_strike_menu()
-    elif monster.dexterity==character.dexterity:
+    elif monster.dexterity==user.dexterity:
         print("egyenlo")
         strike()
 
 def begin():
     print(("-*")*30)
     print("Test your Sword in a test fight")
-    print(character.begin_character())
-    print(monster.monster())
+    print(user.begin_character())
+    print(monster.monster_status())
     begin_submenu_items=Menu([
                             MenuItem(1, "Strike", strike),
                             MenuItem(2, "Retreat", begin),
@@ -70,7 +107,7 @@ def begin():
     begin_submenu_item=begin_submenu_items.select_menu_item()
 
 def print_character():
-    print(character.get_character())
+    print(user.get_character())
     print_submenu_items=Menu([
                             MenuItem(1, "Begin", begin),
                             MenuItem(2, "Save", save_game),
@@ -88,18 +125,18 @@ def potion_submenu():
 
 def potion_of_dexterity():
     print("Your selected potion is dexterity")
-    character.get_inventory("dexterity")
+    user.get_inventory("dexterity")
     return potion_submenu()
 
 
 def potion_of_luck():
     print("Your selected potion is luck")
-    character.get_inventory("luck")
+    user.get_inventory("luck")
     return potion_submenu()
 
 def potion_of_health():
     print("Your selected potion is health")
-    character.get_inventory("health")
+    user.get_inventory("health")
     return potion_submenu()
 
 def select_potion():
@@ -141,9 +178,9 @@ def reenter_name():
         reenter_name()
 
 def roll_stat_game():
-    character.get_dexterity()
-    character.get_luck()
-    character.get_health()
+    user.get_dexterity()
+    user.get_luck()
+    user.get_health()
     roll_stat_items=Menu([
                     MenuItem(1, "Reroll stats", roll_stat_game),
                     MenuItem(2, "Continue", select_potion),
@@ -165,8 +202,8 @@ def quit_game():
     quit_item=quit_items.select_menu_item()
 
 def new_game():
-    character.name=input('What is your name? ')
-    print('Your name is: '+ character.name)
+    user.name=input('What is your name? ')
+    print('Your name is: '+ user.name)
     submenu_items=Menu([
                     MenuItem(1, "Reenter name", reenter_name),
                     MenuItem(2, "Continue", roll_stat_game),
