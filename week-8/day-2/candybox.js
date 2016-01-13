@@ -36,9 +36,10 @@ document.querySelector('.buy_lollipop').addEventListener('click', function() {
 
 setInterval (function () {
   if (numberOfLollipops >= 10) {
+    checkButtonDisability()
     numberOfCandies +=1 * Math.floor(numberOfLollipops/10);
     document.querySelector('.number_of_candies').innerHTML = numberOfCandies;
-    candiesPerSec()
+    candiesPerSec();
   }
 },1000)
 
