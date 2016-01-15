@@ -1,14 +1,14 @@
 'use strict'
 
 function createRequest(method, url, data, callback) {
-  var probaRequest = new XMLHttpRequest();
-  probaRequest.open(method, url);
-  probaRequest.setRequestHeader('Content-type', 'application/json');
-  probaRequest.send(data);
-  probaRequest.onreadystatechange = function () {
-    console.log('allapot: ', probaRequest.readyState);
-    if (probaRequest.readyState === 4) {
-      callback(probaRequest.response);
+  var todoRequest = new XMLHttpRequest();
+  todoRequest.open(method, url);
+  todoRequest.setRequestHeader('Content-type', 'application/json');
+  todoRequest.send(data);
+  todoRequest.onreadystatechange = function () {
+    console.log('status: ', todoRequest.readyState);
+    if (todoRequest.readyState === 4) {
+      callback(todoRequest.response);
     }
   };
 }
