@@ -28,8 +28,12 @@ function nextId() {
 
 var items = {};
 
-function getItem(id) {
-  return items[id];
+function getItem(todo_id, callback) {
+  connection.query('SELECT text, completed, status FROM new_table WHERE todo_id=?', todo_id, function(err, result){
+    if (err) {throw err;}
+    console.log(result);
+    callback(result);
+  });
 }
 
 function addItem(attributes) {
@@ -39,20 +43,26 @@ function addItem(attributes) {
   });
 }
 
-function removeItem(id) {
-  connection.query('INSERT INTO new_table SET ?', attributes, function(err, result) {
+function removeItem(todo_id, callback) {
+  connection.query('DELETE FROM new_table WHERE todo_id=?', todo_id, function(err, result){
+     if (err) throw err;
+     console.log(result.insertId);
+     callback(result);
+   });
+}
+
+function completeItems(todo_id, callback) {
+  connection.query('UPDATE todo SET status="completed" WHERE todo_id=?', todo_id, function(err, result) {
     if (err) throw err;
-    console.log(result.insertId);
+    console.log(result);
+    callback(result);
   });
 }
 
-// delete items[id];
-
-
-function allItems(cb) {
+function allItems(callback) {
   connection.query('SELECT * FROM new_table', function(err, results) {
     if (err) throw err;
-    cb(results);
+    callback(results);
   });
 }
 

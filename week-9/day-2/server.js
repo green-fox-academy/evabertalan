@@ -6,9 +6,9 @@ var items = require("./items.js");
 
 var app = express();
 
-items.add({text: 'Buy milk'});
-items.add({text: 'Make dinner'});
-items.add({text: 'Save the world'});
+// items.add({text: 'Buy milk'});
+// items.add({text: 'Make dinner'});
+// items.add({text: 'Save the world'});
 
 app.use(logRequest);
 app.use(express.static("public"));
@@ -37,8 +37,7 @@ app.put("/todos/:id", function (req, res) {
 });
 
 app.delete("/todos/:id", function (req, res) {
-  findItem(req, res, function (item) {
-    items.remove(item.id);
+  items.remove(req.params.id, function(item) {
     item.destroyed = true;
     res.json(item);
   });
