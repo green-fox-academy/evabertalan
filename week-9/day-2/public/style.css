@@ -1,46 +1,65 @@
-h1 {
-  margin-left: 30px;
+html {
+  margin: auto;
+  text-align: center;
 }
 
-.todo-container p {
+body {
+  font-family: 'Noto Sans', sans-serif;
+  margin: auto;
+}
+
+h1 {
+  color: #092327;
+  text-align: center;
+}
+
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.todo-row {
+  background-color: #90C2E7;
+  height: 35px;
+}
+/*#87BCDE*/
+
+
+
+.todo-container {
   margin-top: 30px;
   text-align: center;
-  margin-left: 30px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 0px;
-  width: 400px;
+  width: 550px;
   height: 30px;
   padding: auto;
-  background-color: #87BCDE;
+  /*background-color: red;*/
 }
 
 .add-todo {
-  background-color: #2980b9;
+  background-color: #4E8098;
   padding: 10px;
   color: white;
   font-size: 14px;
 }
-.remove-all-todo {
-  background-color: #2980b9;
-  padding: 10px;
+
+/*#2980b9*/
+
+.remove {
+  width: 70px;
+  background-color: #092327
+ ;
   color: white;
-  font-size: 14px;
-
-  }
-
-.completed-todo {
-  background-color: white;
-  padding: 10px;
-  font-size: 14px;
+  font-size: 13px;
 }
-
-.remove-this {
-  margin: 0;
-  padding: 5px;
-  height: 30px;
-  margin-left: 376px;
+.complete {
   background-color: #2ecc71;
   color: white;
-  font-style: italic;
+  font-size: 13px;
+  width: 70px;
 }
 
 textarea {
@@ -48,8 +67,4 @@ textarea {
   height: 30px;
   margin: 30px;
   font-size: 16px;
-}
-
-.buttons {
-  margin: 30px;
 }

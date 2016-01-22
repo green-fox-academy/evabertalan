@@ -29,7 +29,8 @@ function nextId() {
 var items = {};
 
 function getItem(todo_id, callback) {
-  connection.query('SELECT text, completed, status FROM new_table WHERE todo_id=?', todo_id, function(err, result){
+  connection.query('SELECT text, completed, status FROM new_table WHERE todo_id=?', todo_id,
+    function(err, result){
     if (err) {throw err;}
     console.log(result);
     callback(result);
