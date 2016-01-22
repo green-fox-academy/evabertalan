@@ -30,8 +30,7 @@ app.get("/todos/:id", function (req, res) {
 });
 
 app.put("/todos/:id", function (req, res) {
-  findItem(req, res, function (item) {
-    item.update(req.body);
+  items.update(req.params.id, function(item) {
     res.json(item);
   });
 });

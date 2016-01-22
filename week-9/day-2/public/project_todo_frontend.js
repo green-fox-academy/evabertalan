@@ -14,6 +14,7 @@ var completeElement = document.querySelector('.completed-todo')
 var listCallback = function (response) {
   var todoItems = JSON.parse(response);
   todoItems.forEach(function(todoItem) {
+
     var newTodoRow = document.createElement('tr');
     newTodoRow.setAttribute('class', 'todo-row' )
     todoContainer.appendChild(newTodoRow);
@@ -35,8 +36,6 @@ var listCallback = function (response) {
     newTodoItem.innerText = todoItem.text;
     newTodoRow.appendChild(newTodoItem);
 
-
-
     var newDeleteButton = document.createElement('td')
     newDeleteButton.innerText = 'Remove'
     newDeleteButton.setAttribute('class', 'remove' )
@@ -55,14 +54,11 @@ addTodo.addEventListener('click', function() {
   var createTodoCallback = function (response) {
     refresh();
   }
-
   createRequest('POST', url, newTodo, createTodoCallback);
 });
 
 
 var removeElement = document.querySelector('.todo-container');
-// var removeElement = document.querySelector('.remove');
-console.log(removeElement);
 removeElement.addEventListener('dblclick', function(e) {
   var id = e.target.getAttribute("id");
   console.log(id);
@@ -72,11 +68,10 @@ removeElement.addEventListener('dblclick', function(e) {
 completeElement.addEventListener('click', function() {
   var done = document.querySelectorAll('.checkbox');
   for (var i = 0; i < done.length; i++){
+    var id = 0;
     if (done[i].checked === true) {
-      // document.body.style.backgroundColor = "red";
-      document.body.style.backgroundColor = "red";
-      console.log(done[i]);
-      console.log("kaka");
+      id = done[i].id;
+      createRequest('PUT', url +'/' + id, undefined, refresh)
     }
   }
 });

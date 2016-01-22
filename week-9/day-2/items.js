@@ -53,7 +53,8 @@ function removeItem(todo_id, callback) {
 }
 
 function completeItems(todo_id, callback) {
-  connection.query('UPDATE todo SET status="completed" WHERE todo_id=?', todo_id, function(err, result) {
+console.log(todo_id,'ez');
+  connection.query('UPDATE new_table SET status="completed" WHERE todo_id=?', todo_id, function(err, result) {
     if (err) throw err;
     console.log(result);
     callback(result);
@@ -73,4 +74,5 @@ module.exports = {
   add: addItem,
   remove: removeItem,
   all: allItems,
+  update: completeItems
 };

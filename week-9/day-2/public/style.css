@@ -13,6 +13,10 @@ h1 {
   text-align: center;
 }
 
+.input-area {
+  display: flex;
+  justify-content: center;
+}
 
 .checkbox {
   width: 20px;
@@ -44,6 +48,25 @@ h1 {
   padding: 10px;
   color: white;
   font-size: 14px;
+  border-bottom: 0;
+  height: 37px;
+}
+
+.completed-todo {
+  background-color: #4E8098;
+  width: 175px;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  border-bottom: 0;
+  height: 37px;
+}
+
+.bottom-buton {
+  display: flex;
+  justify-content: flex-start;
+  width: 550px;
+  margin: auto;
 }
 
 /*#2980b9*/
@@ -63,8 +86,8 @@ h1 {
 }
 
 textarea {
-  width: 400px;
+  width: 450px;
   height: 30px;
-  margin: 30px;
+  margin: 0px;
   font-size: 16px;
 }
